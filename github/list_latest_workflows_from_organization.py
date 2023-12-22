@@ -9,10 +9,10 @@ with DAG(
         "retries": 1,
         "retry_delay": timedelta(minutes=5),
     },
-    description="A simple tutorial DAG",
+    description="Lists latest workflows from an organization",
     schedule=timedelta(days=1),
     catchup=False,
     tags=["github"]
 ) as dag:    
-    t1 = BashOperator(task_id="", bash_command="ls -l")
+    t1 = BashOperator(task_id="gh_org_workflow_list", bash_command="ls -l")
     t1
