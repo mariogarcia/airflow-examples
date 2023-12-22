@@ -7,10 +7,11 @@ with DAG(
     default_args={
         "depends_on_past": False,
         "retries": 1,
-        "retry_delay": timedelta(minutes=5),
+        "retry_delay": timedelta(minutes=5)
     },
     description="Lists latest workflows from an organization",
     schedule=timedelta(days=1),
+    start_date=datetime(2023, 12, 23),
     catchup=False,
     tags=["github"]
 ) as dag:    
