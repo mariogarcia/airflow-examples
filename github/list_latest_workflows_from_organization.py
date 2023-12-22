@@ -5,7 +5,7 @@ with DAG(
     "list_organization_latest_workflows",
     default_args = {
         description="A simple tutorial DAG",
-        schedule=timedelta(days=1)
+        schedule=timedelta(days=1),
         catchup=False,
         tags=["github"]
     }
